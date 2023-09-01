@@ -19,3 +19,4 @@ Route::get('/', function () {
 });
 
 Route::get('/articles', [ArticleController::class, 'getAllArticles']);
+Route::get('/article/(d+)', [ArticleController::class, 'getArticleById']);

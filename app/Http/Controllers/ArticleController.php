@@ -13,4 +13,10 @@ class ArticleController extends Controller
     $articles = Article::all();
     return view('index', ['articles' => $articles]);
     }
+
+    public function getArticleById(){
+
+    $articleId = Article::id();
+    return view('article', ['id' => $articleId]);
+    }
 }

@@ -1,4 +1,4 @@
-#Blog Laravel
+# Blog Laravel
 
 Welcome to my first ever project in Laravel !
 It's gonna be a blog project where you can navigate between the different articles or search a specific one.

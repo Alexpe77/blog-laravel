@@ -14,7 +14,7 @@
         <div>{{ $article->content }}</div>
         <p>{{ $article->publish_date }}</p>
     </article>
-    <a href="/posts">Go back</a>
+    <a href="/Blog-Laravel/public/posts">Go back</a>
 
 </body>
 

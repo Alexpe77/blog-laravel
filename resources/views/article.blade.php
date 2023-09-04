@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Article {{ $articleId }}</title>
+    <title>Article</title>
 </head>
-<!----------------- TODO: ADD THE RIGHT THING TO DISPLAY ----------->
+
 <body>
     <article>
         <h2>{{ $article->title }}</h2>
@@ -14,6 +14,8 @@
         <div>{{ $article->content }}</div>
         <p>{{ $article->publish_date }}</p>
     </article>
+    <a href="/posts">Go back</a>
+
 </body>
 
 </html>

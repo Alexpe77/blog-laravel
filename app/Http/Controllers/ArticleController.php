@@ -11,12 +11,12 @@ class ArticleController extends Controller
     public function getAllArticles(){
 
     $articles = Article::all();
-    return view('index', ['articles' => $articles]);
+    return view('posts', ['articles' => $articles]);
     }
 
-    public function getArticleById(){
+    public function getArticleById($id){
 
-    $articleId = Article::id();
-    return view('article', ['id' => $articleId]);
+    $article = Article::find($id);
+    return view('article', ['article' => $article]);
     }
 }

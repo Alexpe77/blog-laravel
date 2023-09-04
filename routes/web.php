@@ -20,3 +20,4 @@ Route::get('/', function () {
 
 Route::get('articles', [ArticleController::class, 'getAllArticles']);
 Route::get('article/{id}', [ArticleController::class, 'getArticleById']);
+Route::get('article/create', [ArticleController::class, 'createArticle']);

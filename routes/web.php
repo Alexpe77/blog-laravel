@@ -18,5 +18,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('posts', [ArticleController::class, 'getAllArticles']);
+Route::get('articles', [ArticleController::class, 'getAllArticles']);
 Route::get('article/{id}', [ArticleController::class, 'getArticleById']);

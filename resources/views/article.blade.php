@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Article</title>
+    <title>Article {{ $article->id }}</title>
 </head>
 
 <body>
@@ -14,7 +14,7 @@
         <div>{{ $article->content }}</div>
         <p>{{ $article->publish_date }}</p>
     </article>
-    <a href="/Blog-Laravel/public/posts">Go back</a>
+    <a href="/Blog-Laravel/public/articles">< Go back</a>
 
 </body>
 

@@ -11,7 +11,7 @@ class ArticleController extends Controller
     public function getAllArticles(){
 
     $articles = Article::all();
-    return view('posts', ['articles' => $articles]);
+    return view('articles', ['articles' => $articles]);
     }
 
     public function getArticleById($id){

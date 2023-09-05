@@ -13,9 +13,9 @@
     @foreach ($articles as $article)
         <article>
             <h2><a href="{{ url('/article', ['id' => $article->id]) }}">{{ $article->title }}</a></h2>
-            <p>{{ $article->author }}</p>
+            <p>Written by {{ $article->author }}</p>
             <div>{{ $article->content }}</div>
-            <p>{{ $article->publish_date }}</p>
+            <p>Publish date {{ $article->publish_date }}</p>
         </article>
     @endforeach
 

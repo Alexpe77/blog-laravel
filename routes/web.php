@@ -16,7 +16,7 @@ use App\Http\Controllers\SignupController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('articles');
 });
 
 Route::get('articles', [ArticleController::class, 'getAllArticles']);

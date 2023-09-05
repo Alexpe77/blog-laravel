@@ -7,5 +7,7 @@
 </head>
 <body>
     <h2>Create a new article</h2>
+
+    <a href="/Blog-Laravel/public/articles">< Go back</a>
 </body>
 </html>

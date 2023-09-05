@@ -9,10 +9,10 @@
 
 <body>
     <article>
-        <h2>{{ $article->title }}</h2>
+        <h2>Written by {{ $article->title }}</h2>
         <p>{{ $article->author }}</p>
         <div>{{ $article->content }}</div>
-        <p>{{ $article->publish_date }}</p>
+        <p>Publish date {{ $article->publish_date }}</p>
     </article>
     <a href="/Blog-Laravel/public/articles">< Go back</a>
 

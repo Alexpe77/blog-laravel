@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\SignupController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +22,6 @@ Route::get('/', function () {
 Route::get('articles', [ArticleController::class, 'getAllArticles']);
 Route::get('article/{id}', [ArticleController::class, 'getArticleById']);
 Route::get('articles/create', [ArticleController::class, 'createArticle']);
+
+Route::get('signup', [SignupController::class, 'create']);
+Route::post('signup', [SignupController::class, 'store']);

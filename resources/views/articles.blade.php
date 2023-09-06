@@ -14,6 +14,11 @@
         <nav><a href="/signup">Sign Up</a>
     <a href="/login">Login</a></nav>
     </div>
+    @if (session()->has('success'))
+    <div>
+        <p> {{ session('success')->get('success') }} </p>
+    </div>
+    @endif
 
     @foreach ($articles as $article)
     <article>

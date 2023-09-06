@@ -42,4 +42,6 @@ class User extends Authenticatable
     public function setPasswordAttribute($pwd) {
         $this->attributes['password'] = bcrypt($pwd);
     }
+
+    public $timestamps = false;
 }

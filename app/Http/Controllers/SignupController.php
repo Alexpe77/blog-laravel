@@ -21,8 +21,6 @@ class SignupController extends Controller
 
         User::create($attributes);
 
-        session()->flash('success', 'Your account has been crated successfully.');
-
-        return redirect ('/');
+        return redirect('articles')->with('success', 'Your account has been created successfully.');
     }
 }

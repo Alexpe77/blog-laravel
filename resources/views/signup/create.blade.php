@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <title>Sign Up</title>
 </head>
 
@@ -11,7 +12,7 @@
     <h2>Welcome</h2>
     <h3>Let's sign up quickly</h3>
 
-    <form method="POST" action="/signup">
+    <form method="POST" action="{{ url('/signup') }}">
         @csrf
         <label for="name">Name</label>
         <input type="text" name="name" id="name" value="{{ old('name') }}" required>
@@ -33,8 +34,9 @@
         @error('password')
         <p>{{ $message }}</p>
         @enderror
-        <button type="submit">Submit</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+    <a href="/Blog-Laravel/public/articles">< Go back</a>
 </body>
 
 </html>

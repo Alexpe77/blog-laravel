@@ -21,6 +21,8 @@
     </div>
     @endif
 
+    <!-------- TODO : FIX setTimeOut ------------>
+
     @foreach ($articles as $article)
     <article>
         <h2><a href="{{ url('/article', ['id' => $article->id]) }}">{{ $article->title }}</a></h2>

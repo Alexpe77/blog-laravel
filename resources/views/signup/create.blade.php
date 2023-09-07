@@ -5,8 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <style>body {
-            background-color: whitesmoke;
+    <style>.custom-rounded {
+    border-radius: 10px;
+    }
+    .custom-gradient {
+        background: rgb(53,151,238);
+        background: linear-gradient(170deg, rgba(53,151,238,0.4150035014005602) 0%, rgba(150,233,233,1) 100%);
+    }
+    .btn {
+        background-color: #3597ee;
+        border-style: none;
     }
     </style>
     <title>Sign Up</title>
@@ -16,13 +24,13 @@
     <div class="container">
         <div class="row justify-content-center align-items-center min-vh-100">
             <div class="col-md-4">
-                <div class="bg-light p-4">
-                    <h2>Welcome !</h2>
-                    <h3>Let's sign up quickly</h3>
-                    <form method="POST" class="mt-5" action="{{ url('/signup') }}">
+                <div class="bg-primary p-4 custom-rounded custom-gradient">
+                    <h2 class="text-light">Welcome !</h2>
+                    <h3 class="text-light">Let's sign up quickly</h3><hr>
+                    <form method="POST" class="mt-4" action="{{ url('/signup') }}">
                         @csrf
                         <div class="form-group mb-1">
-                            <input type="text" class="form-control" name="name" id="name" placeholder="Name" value="{{ old('name') }}" required>
+                            <input type="text" class="form-control" text-body-secondary name="name" id="name" placeholder="Name" value="{{ old('name') }}" required>
                             @error('name')
                             <p>{{ $message }}</p>
                             @enderror
@@ -46,12 +54,12 @@
                             @enderror
                         </div>
                         <div class="text-center mt-4">
-                            <button type="submit" class=" form-control btn btn-primary">Submit</button>
+                            <button type="submit" class="form-control btn btn-light"><b>Submit</b></button>
                         </div>
                     </form>
 
                     <a href="/Blog-Laravel/public/articles">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house mt-4" viewBox="0 0 16 16">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house text-black mt-4" viewBox="0 0 16 16">
                             <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z" />
                         </svg>
                     </a>

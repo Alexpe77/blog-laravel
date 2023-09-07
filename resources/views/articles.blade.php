@@ -12,8 +12,8 @@
     <div class="top_block">
         <h1>Welcome to my blog!</h1>
         <nav>
-            <a href="/Blog-Laravel/public/signup">Sign Up</a>
-            <a href="/Blog-Laravel/public/login">Login</a>
+            <a href="/Blog-Laravel/public/signup" class="btn btn-primary">Sign Up</a>
+            <a href="/Blog-Laravel/public/login" class="btn btn-primary">Login</a>
         </nav>
     </div>
     @if (session()->has('success'))
@@ -25,13 +25,13 @@
     <div class="container">
     <div class="row">
         @foreach ($articles as $article)
-        <div class="col-md-4">
-            <div class="card" style="width: 18rem;">
-                <img src="{{ asset('img/' . $article->picture) }}" class="card-img-top" alt="{{ $article->title }}">
+        <div class="col-md-4 g-2">
+            <div class="card h-100 l-80" style="width: 19rem;">
+                <img src="{{ asset('img/' . $article->picture) }}" class="card-img-top img-fluid" alt="Picture of an open book">
                 <div class="card-body">
                     <h5 class="card-title">{{ $article->title }}</h5>
-                    <p class="card-text">{{ $article->author }}</p>
-                    <p class="card-text">{{ $article->publish_date }}</p>
+                    <p class="card-text">by {{ $article->author }}</p>
+                    <p class="card-text">Publish date {{ $article->publish_date }}</p>
                     <a href="{{ url('/article', ['id' => $article->id]) }}" class="btn btn-primary">Read More</a>
                 </div>
             </div>

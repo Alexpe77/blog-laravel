@@ -10,8 +10,8 @@
 
 <body>
     <article>
-        <h2>Written by {{ $article->title }}</h2>
-        <p>{{ $article->author }}</p>
+        <h2>{{ $article->title }}</h2>
+        <p>Written by {{ $article->author }}</p>
         <div>{{ $article->content }}</div>
         <p>Publish date {{ $article->publish_date }}</p>
     </article>

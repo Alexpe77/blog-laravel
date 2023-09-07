@@ -5,38 +5,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <style>body {
+            background-color: whitesmoke;
+    }
+    </style>
     <title>Sign Up</title>
 </head>
 
 <body>
-    <h2>Welcome</h2>
-    <h3>Let's sign up quickly</h3>
+    <div class="container">
+        <div class="row justify-content-center align-items-center min-vh-100">
+            <div class="col-md-4">
+                <div class="bg-light p-4">
+                    <h2>Welcome !</h2>
+                    <h3>Let's sign up quickly</h3>
+                    <form method="POST" class="mt-5" action="{{ url('/signup') }}">
+                        @csrf
+                        <div class="form-group mb-1">
+                            <input type="text" class="form-control" name="name" id="name" placeholder="Name" value="{{ old('name') }}" required>
+                            @error('name')
+                            <p>{{ $message }}</p>
+                            @enderror
+                        </div>
+                        <div class="form-group mb-1">
+                            <input type="text" class="form-control" name="username" id="username" placeholder="Username" value="{{ old('username') }}" required>
+                            @error('username')
+                            <p>{{ $message }}</p>
+                            @enderror
+                        </div>
+                        <div class="form-group mb-1">
+                            <input type="email" class="form-control" name="email" id="email" placeholder="Email" value="{{ old('email') }}" required>
+                            @error('email')
+                            <p>{{ $message }}</p>
+                            @enderror
+                        </div>
+                        <div class="form-group mb-1">
+                            <input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
+                            @error('password')
+                            <p>{{ $message }}</p>
+                            @enderror
+                        </div>
+                        <div class="text-center mt-4">
+                            <button type="submit" class=" form-control btn btn-primary">Submit</button>
+                        </div>
+                    </form>
 
-    <form method="POST" action="{{ url('/signup') }}">
-        @csrf
-        <label for="name">Name</label>
-        <input type="text" name="name" id="name" value="{{ old('name') }}" required>
-        @error('name')
-        <p>{{ $message }}</p>
-        @enderror
-        <label for="username">Username</label>
-        <input type="text" name="username" id="username" value="{{ old('username') }}" required>
-        @error('username')
-        <p>{{ $message }}</p>
-        @enderror
-        <label for="email">Email</label>
-        <input type="email" name="email" id="email" value="{{ old('email') }}" required>
-        @error('email')
-        <p>{{ $message }}</p>
-        @enderror
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password" required>
-        @error('password')
-        <p>{{ $message }}</p>
-        @enderror
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-    <a href="/Blog-Laravel/public/articles">< Go back</a>
+                    <a href="/Blog-Laravel/public/articles">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house mt-4" viewBox="0 0 16 16">
+                            <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

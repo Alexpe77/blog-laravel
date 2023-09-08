@@ -27,7 +27,7 @@
     <div class="container">
         <div class="row justify-content-center align-items-center min-vh-100">
             <div class="col-md-4">
-                <div class="bg-primary p-4 custom-rounded custom-gradient">
+                <div class="bg-primary p-4 custom-rounded custom-gradient shadow">
                     <h2>Welcome !</h2>
                     <h4>Let's sign you up quickly</h4>
                     <hr>
@@ -58,7 +58,7 @@
                             @enderror
                         </div>
                         <div class="text-center mt-3">
-                            <button type="submit" class="form-control btn btn-light"><b>Submit</b></button>
+                            <button type="submit" class="form-control btn btn-light shadow-sm"><b>SUBMIT</b></button>
                         </div>
                     </form>
                     <div class="d-flex justify-content-between mt-4">

@@ -40,9 +40,9 @@
     <div class="row">
         @foreach ($articles as $article)
         <div class="col-md-12 mb-3">
-            <div class="card l-100" style="width: 80%; border: 1px solid black; border-radius: 10px; box-shadow: -3px 5px 6px rgba(200, 200, 200, 0.5);">
+            <div class="card l-100" style="width: 80%; border: 1px solid black; border-radius: 10px; box-shadow: -3px 5px 6px rgba(173, 216, 230, 0.7);">
                 <img src="{{ asset('img/' . $article->picture) }}" class="card-img-top img-fluid" alt="Picture of an open book" style="border-radius: 10px 10px 0 0;">
-                <div class="card-body text-center" style="background-color: black; color: whitesmoke; border-radius: 0 0 10px 10px; box-shadow: -2px 5px 6px rgba(200, 200, 200, 0.5);">
+                <div class="card-body text-center" style="background-color: black; color: whitesmoke; border-radius: 0 0 10px 10px; box-shadow: -2px 5px 6px rgba(173, 216, 230, 0.7);">
                     <h5 class="card-title" style="font-size: 22px;">"{{ $article->title }}"</h5>
                     <p class="card-text">by {{ $article->author }}</p>
                     <p class="card-text">Publish date {{ date('d-m-Y', strtotime($article->publish_date)) }}</p>

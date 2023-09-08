@@ -12,7 +12,7 @@
     <div class="container">
         <div class="row justify-content-center align-items-center min-vh-100">
             <div class="col-md-4">
-                <div class="p-4" style="background-color: black; color: whitesmoke; border-radius: 10px; box-shadow: 1px 1px 15px 8px rgba(255,255,255,0.71);">
+                <div class="p-4" style="background-color: black; color: whitesmoke; border-radius: 10px; box-shadow: 1px 1px 15px 8px rgba(173, 216, 230, 0.7);">
                     <h2 style="color: lightgreen; font-size: 30px;">{{ $article->title }}</h2>
                     @if (!empty($article->picture))
                     <img src="{{ asset('img/' . $article->picture) }}" alt="Picture of a book" class="card-img-right img-fluid rounded mt-3">

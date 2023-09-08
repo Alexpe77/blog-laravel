@@ -28,8 +28,8 @@
         <div class="row justify-content-center align-items-center min-vh-100">
             <div class="col-md-4">
                 <div class="bg-primary p-4 custom-rounded custom-gradient shadow">
-                    <h2>Welcome !</h2>
-                    <h4>Let's sign you up quickly</h4>
+                    <h2 class="text-center"><b>Welcome !</b></h2>
+                    <h4 class="text-center">Let's sign you up quickly</h4>
                     <hr>
                     <form method="POST" class="mt-4" action="{{ url('/signup') }}">
                         @csrf

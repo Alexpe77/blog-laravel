@@ -11,7 +11,7 @@
     <title>Blog</title>
 </head>
 
-<body>
+<body class="">
     <div class="top_block d-flex justify-content-between align-items-center bg-light custom-bg shadow-sm">
         <h1 class="mx-auto mt-3 fw-bold" style="font-family: 'Lato', sans-serif;font-size: 36px;">What do you want to read today ?</h1>
         <div class="right-section mt-3">
@@ -32,9 +32,9 @@
             <div class="card l-100" style="width: 80%;">
                 <img src="{{ asset('img/' . $article->picture) }}" class="card-img-top img-fluid" alt="Picture of an open book">
                 <div class="card-body text-center shadow">
-                    <h5 class="card-title" style="font-size: 22px;">{{ $article->title }}</h5>
+                    <h5 class="card-title" style="font-size: 22px;">"{{ $article->title }}"</h5>
                     <p class="card-text">by {{ $article->author }}</p>
-                    <p class="card-text">Publish date {{ $article->publish_date }}</p>
+                    <p class="card-text">Publish date {{ date('d-m-Y', strtotime($article->publish_date)) }}</p>
                     <a href="{{ url('/article', ['id' => $article->id]) }}" class="btn btn-primary mx-auto shadow-sm">Read More</a>
                 </div>
             </div>

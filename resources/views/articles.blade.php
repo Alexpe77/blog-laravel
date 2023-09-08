@@ -9,11 +9,11 @@
 </head>
 
 <body>
-    <div class="top_block">
-        <h1>Welcome to my blog!</h1>
-        <nav>
-            <a href="/Blog-Laravel/public/signup" class="btn btn-primary">Sign Up</a>
-            <a href="/Blog-Laravel/public/login" class="btn btn-primary">Login</a>
+    <div class="top_block d-flex justify-content-between align-items-center">
+        <h1 class="mx-auto">Welcome to my blog!</h1>
+        <nav class="d-flex">
+            <a href="/Blog-Laravel/public/signup" class="btn btn-primary mx-1">Sign Up</a>
+            <a href="/Blog-Laravel/public/login" class="btn btn-primary mx-1">Login</a>
         </nav>
     </div>
     @if (session()->has('success'))
@@ -26,7 +26,7 @@
     <div class="row">
         @foreach ($articles as $article)
         <div class="col-md-4 g-2">
-            <div class="card h-100 l-80" style="width: 19rem;">
+            <div class="card h-100 l-100" style="width: 19rem;">
                 <img src="{{ asset('img/' . $article->picture) }}" class="card-img-top img-fluid" alt="Picture of an open book">
                 <div class="card-body">
                     <h5 class="card-title">{{ $article->title }}</h5>

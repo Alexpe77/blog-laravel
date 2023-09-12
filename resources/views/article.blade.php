@@ -14,11 +14,11 @@
             <div class="col-md-4">
                 <div class="p-4" style="background-color: black; color: whitesmoke; border-radius: 10px; box-shadow: 1px 1px 15px 8px rgba(173, 216, 230, 0.7);">
                     <h2 style="color: lightgreen; font-size: 30px;">{{ $article->title }}</h2>
+                    <p class="mt-2">By {{ $article->author }}</p>
                     @if (!empty($article->picture))
-                    <img src="{{ asset('img/' . $article->picture) }}" alt="Picture of a book" class="card-img-right img-fluid rounded mt-3">
+                    <img src="{{ asset('img/' . $article->picture) }}" alt="Picture of a book" class="img-fluid rounded mt-2">
                     @endif
-                    <p class="mt-4">Written by {{ $article->author }}</p>
-                    <p class="mt-4">{{ $article->content }}</p>
+                    <p class="mt-3">{{ $article->content }}</p>
                     <p style="border-top: 1px solid lightgreen;">Publish date {{ date('d-m-Y', strtotime($article->publish_date)) }}</p>
                     <a href="/Blog-Laravel/public/articles">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="lightgreen" class="bi bi-house" viewBox="0 0 16 16">

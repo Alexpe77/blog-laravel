@@ -21,7 +21,9 @@ Route::get('/', function () {
 
 Route::get('articles', [ArticleController::class, 'getAllArticles']);
 Route::get('article/{id}', [ArticleController::class, 'getArticleById']);
-Route::get('articles/create', [ArticleController::class, 'createArticle']);
+Route::get('articles/new-article', [ArticleController::class, 'createArticle']);
 
 Route::get('/signup', [SignupController::class, 'create']);
 Route::post('/signup', [SignupController::class, 'store'])->name('signup.store');
+
+Route::get('/login', [LoginController::class, 'login']);

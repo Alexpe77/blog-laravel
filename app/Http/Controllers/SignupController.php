@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class SignupController extends Controller
 {
     public function create() {
-        return view ('signup.create');
+        return view ('signup.signup');
     }
 
     public function store() {

@@ -20,9 +20,8 @@ class SessionsController extends Controller
         ]);
 
         if (auth()->attempt($attributes)) {
-            session()->regenerate();
 
-            return redirect('/')->with('success', 'Welcome back !');
+            return redirect('/articles')->with('success', 'Welcome back !');
         }
 
         throw ValidationException::withMessages([
@@ -34,6 +33,6 @@ class SessionsController extends Controller
 
         auth()->logout();
 
-        return redirect('/')->with('success', 'Goodbye !');
+        return redirect('/articles')->with('success', 'Goodbye !');
     }
 }

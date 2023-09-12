@@ -28,5 +28,5 @@ Route::get('/signup', [SignupController::class, 'create'])->name('signup.create'
 Route::post('/signup', [SignupController::class, 'store'])->name('signup.store')->middleware('guest');
 
 Route::get('/login', [SessionsController::class, 'login'])->name('login')->middleware('guest');
-Route::post('/session', [SessionsController::class, 'store']);
+Route::post('/session', [SessionsController::class, 'store'])->name('session');
 Route::post('/logout', [SessionsController::class, 'destroy'])->name('logout')->middleware('auth');

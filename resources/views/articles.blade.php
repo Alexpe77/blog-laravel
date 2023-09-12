@@ -32,8 +32,8 @@
         </div>
     </div>
     @if (session()->has('success'))
-    <div id="flash-msg" class="alert alert-success" style="display: none;">
-        <p>{{ session('success') }}</p>
+    <div id="flash-msg" class="alert alert-success col-md-4 mx-auto text-center" style="display: none;">
+        {{ session('success') }}
     </div>
     @endif
 

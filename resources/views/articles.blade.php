@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <script src="/Blog-Laravel/resources/js/flash.js"></script>
     <style> 
     .btn, .card-title {
         background-color: black;
@@ -31,7 +32,7 @@
         </div>
     </div>
     @if (session()->has('success'))
-    <div x-data="{ show: true }" x-init="setTimeout(() => show = false, 4000)" x-show="show" class="fixed btn btn-outline-info">
+    <div id="flash-msg" class="alert alert-success" style="display: none;">
         <p>{{ session('success') }}</p>
     </div>
     @endif

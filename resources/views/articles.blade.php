@@ -19,6 +19,10 @@
         background-color: lightgreen;
         color: black;
     }
+
+    #logoutBtn {
+        color: white;
+    }
     </style>
     <title>Blog</title>
 </head>
@@ -26,9 +30,18 @@
 <body style="background-color: black; position: relative;">
     <div class="top_block d-flex justify-content-between align-items-center" style="background-color: black; color: whitesmoke; box-shadow: -2px 5px 6px rgba(200, 200, 200, 0.5); height: 100px;">
         <h1 class="mx-auto mt-3 fw-bold" style="font-family: 'Lato', sans-serif; font-size: 36px; position: absolute; left: 50%; transform: translateX(-50%);">What do you want to read today ?</h1>
-        <div class="right-section mt-3" style="position: absolute; right: 0; top: 0;">
-            <a href="/Blog-Laravel/public/signup" class="btn btn-outline-info mx-1 mb-2" style="border: 2px solid green;">Sign Up</a>
-            <a href="/Blog-Laravel/public/login" class="btn btn-outline-info mx-1 mb-2" style="border: 2px solid green;">Login</a>
+        <div class="right-section mt-1 text-end" style="position: absolute; right: 0; top: 0;">
+        @auth
+            <p class="fs-5 m-2">Welcome, {{ auth()->user()->name }} !</p>
+
+            <form method="POST" action="/logout">
+        @csrf
+
+            <button type="submit" id="logoutBtn" class="btn fs-6 text-red">Log out</button>
+            </form>
+        @else
+            <a href="{{ route('signup.create') }}" class="btn btn-outline-info mx-1 mb-2" style="border: 2px solid green;">Sign up</a>
+        @endauth
         </div>
     </div>
     @if (session()->has('success'))

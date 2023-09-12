@@ -32,23 +32,11 @@
         <div class="row justify-content-center align-items-center min-vh-100">
             <div class="col-md-4 custom-rounded" style="box-shadow: 1px 1px 15px 8px rgba(173, 216, 230, 0.7);">
                 <div class="p-4 shadow custom-bg">
-                    <h2 class="text-center"><b>Welcome !</b></h2>
-                    <h4 class="text-center">Let's sign you up quickly</h4>
+                    <h2 class="text-center"><b>Welcome back !</b></h2>
+                    <h4 class="text-center">Let's log you in quickly</h4>
                     <hr>
-                    <form method="POST" class="mt-4" action="{{ url('/signup') }}">
+                    <form method="POST" class="mt-4" action="{{ url('/login') }}">
                         @csrf
-                        <div class="form-group mb-1">
-                            <input type="text" class="form-control" name="name" id="name" placeholder="Name" value="{{ old('name') }}" required>
-                            @error('name')
-                            <p>{{ $message }}</p>
-                            @enderror
-                        </div>
-                        <div class="form-group mb-1">
-                            <input type="text" class="form-control" name="username" id="username" placeholder="Username" value="{{ old('username') }}" required>
-                            @error('username')
-                            <p>{{ $message }}</p>
-                            @enderror
-                        </div>
                         <div class="form-group mb-1">
                             <input type="email" class="form-control" name="email" id="email" placeholder="Email" value="{{ old('email') }}" required>
                             @error('email')
@@ -71,7 +59,7 @@
                                 <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z" />
                             </svg>
                         </a>
-                        <p>No account yet ? <a href="/BLog-Laravel/public/create">Sign in</a></p>
+                        <p>No account yet ? <a href="{{ route('login') }}">Sign in</a></p>
                     </div>
                 </div>
             </div>

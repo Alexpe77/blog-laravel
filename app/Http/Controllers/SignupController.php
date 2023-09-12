@@ -19,7 +19,8 @@ class SignupController extends Controller
             'password' => 'required|min:7|max:255',
         ]);
 
-        User::create($attributes);
+        $user = User::create($attributes);
+        auth()->login($user);
 
         return redirect('articles')->with('success', 'Your account has been created successfully.');
     }

@@ -9,20 +9,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     <script src="/Blog-Laravel/resources/js/flash.js"></script>
-    <style> 
-    .btn, .card-title {
-        background-color: black;
-        color: lightgreen;
-    }
-    
-    .btn:hover {
-        background-color: lightgreen;
-        color: black;
-    }
+    <style>
+        .btn,
+        .card-title {
+            background-color: black;
+            color: lightgreen;
+        }
 
-    #logoutBtn {
-        color: white;
-    }
+        .btn:hover {
+            background-color: lightgreen;
+            color: black;
+        }
+
+        #logoutBtn {
+            color: white;
+        }
     </style>
     <title>Blog</title>
 </head>
@@ -31,17 +32,18 @@
     <div class="top_block d-flex justify-content-between align-items-center" style="background-color: black; color: whitesmoke; box-shadow: -2px 5px 6px rgba(200, 200, 200, 0.5); height: 100px;">
         <h1 class="mx-auto mt-3 fw-bold" style="font-family: 'Lato', sans-serif; font-size: 36px; position: absolute; left: 50%; transform: translateX(-50%);">What do you want to read today ?</h1>
         <div class="right-section mt-1 text-end" style="position: absolute; right: 0; top: 0;">
-        @auth
+            @auth
             <p class="fs-5 m-2">Welcome, {{ auth()->user()->name }} !</p>
 
-            <form method="POST" action="/logout">
-        @csrf
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
 
-            <button type="submit" id="logoutBtn" class="btn fs-6 text-red">Log out</button>
+                <button type="submit" id="logoutBtn" class="btn fs-6 text-red">Log Out</button>
             </form>
-        @else
-            <a href="{{ route('signup.create') }}" class="btn btn-outline-info mx-1 mb-2" style="border: 2px solid green;">Sign up</a>
-        @endauth
+            @else
+            <a href="{{ route('signup.create') }}" class="btn btn-outline-info mx-1 mb-2" style="border: 2px solid green;">Sign Up</a>
+            <a href="{{ route('login') }}" class="btn btn-outline-info mx-1 mb-2" style="border: 2px solid green;">Log In</a>
+            @endauth
         </div>
     </div>
     @if (session()->has('success'))
@@ -51,23 +53,23 @@
     @endif
 
     <div class="container mt-4">
-    <div class="row">
-        @foreach ($articles as $article)
-        <div class="col-md-12 mb-3">
-            <article class="card l-100 mx-auto" style="width: 70%; border: 1px solid black; border-radius: 10px; box-shadow: -3px 5px 6px rgba(173, 216, 230, 0.7);">
-                <!-- <img src="{{ asset('img/' . $article->picture) }}" class="card-img-top img-fluid" alt="Picture of an open book" style="border-radius: 10px 10px 0 0;"> -->
-                <div class="card-body text-center" style="background-color: black; color: whitesmoke; border-radius: 0 0 10px 10px; box-shadow: -2px 5px 6px rgba(173, 216, 230, 0.7);">
-                    <h5 class="card-title" style="font-size: 22px;">"{{ $article->title }}"</h5>
-                    <p class="card-text">by {{ $article->author }}</p>
-                    <p class="card-text">{{ Str::words($article->content, 19) }}</p>
-                    <p class="card-text">Publish date {{ date('d-m-Y', strtotime($article->publish_date)) }}</p>
-                    <a href="{{ url('/article', ['id' => $article->id]) }}" class="btn btn-outline-info mx-auto" style="border: 2px solid green;">Read More</a>
-                </div>
-            </article>
+        <div class="row">
+            @foreach ($articles as $article)
+            <div class="col-md-12 mb-3">
+                <article class="card l-100 mx-auto" style="width: 70%; border: 1px solid black; border-radius: 10px; box-shadow: -3px 5px 6px rgba(173, 216, 230, 0.7);">
+                    <!-- <img src="{{ asset('img/' . $article->picture) }}" class="card-img-top img-fluid" alt="Picture of an open book" style="border-radius: 10px 10px 0 0;"> -->
+                    <div class="card-body text-center" style="background-color: black; color: whitesmoke; border-radius: 0 0 10px 10px; box-shadow: -2px 5px 6px rgba(173, 216, 230, 0.7);">
+                        <h5 class="card-title" style="font-size: 22px;">"{{ $article->title }}"</h5>
+                        <p class="card-text">by {{ $article->author }}</p>
+                        <p class="card-text">{{ Str::words($article->content, 19) }}</p>
+                        <p class="card-text">Publish date {{ date('d-m-Y', strtotime($article->publish_date)) }}</p>
+                        <a href="{{ url('/article', ['id' => $article->id]) }}" class="btn btn-outline-info mx-auto" style="border: 2px solid green;">Read More</a>
+                    </div>
+                </article>
+            </div>
+            @endforeach
         </div>
-        @endforeach
     </div>
-</div>
     <div class="create text-light text-center">
         <p>Click <a href="/Blog-Laravel/public/create">here</a> to create a new article</p>
     </div>

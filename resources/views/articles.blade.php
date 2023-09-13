@@ -21,8 +21,8 @@
             color: black;
         }
 
-        #logoutBtn {
-            color: white;
+        h1 {
+            text-shadow: 2px 2px 3px rgba(173, 216, 230, 0.5);
         }
     </style>
     <title>Blog</title>
@@ -38,7 +38,7 @@
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
 
-                <button type="submit" id="logoutBtn" class="btn fs-6 text-red">Log Out</button>
+                <button type="submit" id="logoutBtn" class="btn fs-6">Log Out</button>
             </form>
             @else
             <a href="{{ route('signup.create') }}" class="btn btn-outline-info mx-1 mb-2" style="border: 2px solid green;">Sign Up</a>
@@ -71,7 +71,7 @@
         </div>
     </div>
     <div class="create text-light text-center">
-        <p>Click <a href="/Blog-Laravel/public/create">here</a> to create a new article</p>
+        <p>Click <a href="{{ route('new-article') }}">here</a> to create a new article</p>
     </div>
 </body>
 

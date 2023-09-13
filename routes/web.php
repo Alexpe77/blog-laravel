@@ -20,9 +20,9 @@ Route::get('/', function () {
     return view('articles');
 });
 
-Route::get('articles', [ArticleController::class, 'getAllArticles']);
+Route::get('articles', [ArticleController::class, 'getAllArticles'])->name('articles');
 Route::get('article/{id}', [ArticleController::class, 'getArticleById']);
-Route::get('articles/new-article', [ArticleController::class, 'createArticle']);
+Route::get('articles/new-article', [ArticleController::class, 'createArticle'])->name('new-article')->middleware('auth');
 
 Route::get('/signup', [SignupController::class, 'create'])->name('signup.create')->middleware('guest');
 Route::post('/signup', [SignupController::class, 'store'])->name('signup.store')->middleware('guest');

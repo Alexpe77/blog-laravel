@@ -28,7 +28,7 @@
     <title>Blog</title>
 </head>
 
-<body style="background-color: black; position: relative;">
+<body style="background-color: white; position: relative;">
     <div class="top_block d-flex justify-content-between align-items-center" style="background-color: black; color: whitesmoke; box-shadow: -2px 5px 6px rgba(200, 200, 200, 0.5); height: 100px;">
         <h1 class="mx-auto mt-3 fw-bold" style="font-family: 'Lato', sans-serif; font-size: 36px; position: absolute; left: 50%; transform: translateX(-50%);">What do you want to read today ?</h1>
         <div class="right-section mt-1 text-end" style="position: absolute; right: 0; top: 0;">
@@ -58,7 +58,7 @@
             <div class="col-md-12 mb-3">
                 <article class="card l-100 mx-auto" style="width: 70%; border: 1px solid black; border-radius: 10px; box-shadow: -3px 5px 6px rgba(173, 216, 230, 0.7);">
                     <!-- <img src="{{ asset('img/' . $article->picture) }}" class="card-img-top img-fluid" alt="Picture of an open book" style="border-radius: 10px 10px 0 0;"> -->
-                    <div class="card-body text-center" style="background-color: black; color: whitesmoke; border-radius: 0 0 10px 10px; box-shadow: -2px 5px 6px rgba(173, 216, 230, 0.7);">
+                    <div class="card-body text-center" style="background-color: black; color: whitesmoke; border-radius: 10px; box-shadow: -2px 5px 6px rgba(173, 216, 230, 0.7);">
                         <h5 class="card-title" style="font-size: 22px;">"{{ $article->title }}"</h5>
                         <p class="card-text">by {{ $article->author }}</p>
                         <p class="card-text">{{ Str::words($article->content, 19) }}</p>

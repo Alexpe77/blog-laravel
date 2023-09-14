@@ -2,7 +2,9 @@
 <script>
   tinymce.init({
     selector: 'textarea#editor',
-    plugins: 'advlist autolink lists link image searchreplace fullscreen insertdatetime paste help wordcount',
-    toolbar: 'undo redo | blocks | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist'
+    width: 600,
+    height: 500,
+    plugins: 'file edit searchreplace fullscreen insertdatetime paste help wordcount',
+    toolbar: 'undo redo | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist'
   });
 </script>

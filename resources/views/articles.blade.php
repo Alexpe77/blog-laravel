@@ -33,7 +33,7 @@
         <h1 class="mx-auto mt-3 fw-bold" style="font-family: 'Lato', sans-serif; font-size: 36px; position: absolute; left: 50%; transform: translateX(-50%);">What do you want to read today ?</h1>
         <div class="right-section mt-1 text-end" style="position: absolute; right: 0; top: 0;">
             @auth
-            <p class="fs-5 m-2">Welcome, {{ auth()->user()->name }} !</p>
+            <p class="fs-5 m-2">{{ auth()->user()->name }}</p>
 
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
@@ -47,9 +47,11 @@
         </div>
     </div>
     @if (session()->has('success'))
-    <div id="flash-msg" class="alert alert-success col-md-4 mx-auto text-center" style="display: none;">
-        {{ session('success') }}
+    @auth
+    <div id="flash-msg" class="alert alert-success col-md-4 mx-auto text-center mt-4" style="display: none;">
+        {{ session('success') }}, {{ auth()->user()->name }} !
     </div>
+    @endauth
     @endif
 
     <div class="container mt-4">

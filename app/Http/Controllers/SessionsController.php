@@ -28,7 +28,7 @@ class SessionsController extends Controller
 
         session()->regenerate();
 
-        return redirect('/articles')->with('success', 'Welcome back !');
+        return redirect('/articles')->with('success', 'Welcome back');
 
     }
     
@@ -36,6 +36,6 @@ class SessionsController extends Controller
 
         auth()->logout();
 
-        return redirect('/articles')->with('success', 'Goodbye !');
+        return redirect('/articles')->with('success', 'Goodbye');
     }
 }

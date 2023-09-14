@@ -22,7 +22,9 @@ Route::get('/', function () {
 
 Route::get('articles', [ArticleController::class, 'getAllArticles'])->name('articles');
 Route::get('article/{id}', [ArticleController::class, 'getArticleById']);
-Route::get('articles/new-article', [ArticleController::class, 'createArticle'])->name('new-article')->middleware('auth');
+
+Route::get('articles/new-article', [ArticleController::class, 'createArticle'])->name('article.create')->middleware('auth');
+Route::post('articles/new-article', [ArticleController::class, 'store'])->name('article.store')->middleware('auth');
 
 Route::get('/signup', [SignupController::class, 'create'])->name('signup.create')->middleware('guest');
 Route::post('/signup', [SignupController::class, 'store'])->name('signup.store')->middleware('guest');

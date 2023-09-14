@@ -28,12 +28,12 @@
     <title>Blog</title>
 </head>
 
-<body style="background-color: white; position: relative;">
+<body style="background-color: black; position: relative;">
     <div class="top_block d-flex justify-content-between align-items-center" style="background-color: black; color: whitesmoke; box-shadow: -2px 5px 6px rgba(200, 200, 200, 0.5); height: 100px;">
         <h1 class="mx-auto mt-3 fw-bold" style="font-family: 'Lato', sans-serif; font-size: 36px; position: absolute; left: 50%; transform: translateX(-50%);">What do you want to read today ?</h1>
         <div class="right-section mt-1 text-end" style="position: absolute; right: 0; top: 0;">
             @auth
-            <p class="fs-5 m-2">{{ auth()->user()->name }}</p>
+            <p class="fs-5 m-2">Hi, {{ auth()->user()->name }}</p>
 
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
@@ -72,8 +72,8 @@
             @endforeach
         </div>
     </div>
-    <div class="create text-center">
-        <p>Click <a href="{{ route('new-article') }}">here</a> to create a new article</p>
+    <div class="create text-center text-light">
+        <p>Click <a href="{{ route('article.create') }}">here</a> to create a new article</p>
     </div>
 </body>
 

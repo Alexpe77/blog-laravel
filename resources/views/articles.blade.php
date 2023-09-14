@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-    <script src="/Blog-Laravel/resources/js/flash.js"></script>
+    <script type="module" src="/Blog-Laravel/resources/js/flash.js"></script>
     <style>
         .btn,
         .card-title {
@@ -70,7 +70,7 @@
             @endforeach
         </div>
     </div>
-    <div class="create text-light text-center">
+    <div class="create text-center">
         <p>Click <a href="{{ route('new-article') }}">here</a> to create a new article</p>
     </div>
 </body>

@@ -8,20 +8,52 @@ use Illuminate\Http\Request;
 
 class ArticleController extends Controller
 {
-    public function getAllArticles(){
-    $articles = Article::all();
+    public function getAllArticles()
+    {
+        $articles = Article::all();
 
-    return view('articles', ['articles' => $articles]);
+        return view('articles', ['articles' => $articles]);
     }
 
-    public function getArticleById($id){
-    $article = Article::find($id);
+    public function getArticleById($id)
+    {
+        $article = Article::find($id);
 
-    return view('article', ['article' => $article]);
+        return view('article', ['article' => $article]);
     }
 
-    public function createArticle() {
+    public function createArticle()
+    {
 
         return view('create');
-   }
+    }
+
+    public function store()
+    {
+        // $attributes = request()->validate([
+        //     'title' => 'required|min:3|max:255|unique:articles',
+        //     'author' => 'required|min:2|max:255',
+        //     'content' => 'required|min:2|max:1000',
+        // ]);
+
+        // $attributes['publish_date'] = now();
+        // $attributes['picture'] = 'default.jpg';
+
+        // Article::create($attributes);
+
+        //TODO --------------------Fix validation issues----------------------------------
+
+        $title = request('title');
+        $author = request('author');
+        $content = request('content');
+
+        $article = new Article();
+        $article->title = $title;
+        $article->author = $author;
+        $article->content = $content;
+
+        $article->save();
+
+        return redirect('articles')->with('success', 'Your article has been added successfully.');
+    }
 }

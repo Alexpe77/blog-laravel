@@ -11,6 +11,6 @@ class Article extends Model
 
     protected $guarded = ['id'];
     public $timestamps = false;
-    protected $fillable = ['picture'];
+    protected $fillable = ['picture', 'publish_date'];
 
 }

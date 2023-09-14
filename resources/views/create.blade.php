@@ -50,10 +50,10 @@
                         </div>
                         <div class="mb-3">
                             <label for="content" class="form-label fs-5">Content</label>
-                            <textarea id="editor" name="content" class="form-control" required></textarea>
+                            <textarea id="editor" name="content" class="form-control"></textarea>
                         </div>
                         <div class="text-center">
-                            <button type="submit" class="form-control btn btn-light fs-6 mt-2">Submit</button>
+                            <button type="submit" name="submit" class="form-control btn btn-light fs-6 mt-2">Submit</button>
                         </div>
                         <div class="mt-3">
                 <x-home-icon />

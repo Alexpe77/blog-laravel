@@ -19,9 +19,4 @@ class ArticleController extends Controller
 
     return view('article', ['article' => $article]);
     }
-
-    public function createArticle() {
-
-        return view('create');
-   }
 }

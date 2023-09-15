@@ -51,9 +51,11 @@ class ArticleController extends Controller
         $article->title = $title;
         $article->author = $author;
         $article->content = $content;
+        $article['publish_date'] = now();
+        $article['picture'] = 'default.jpg';
 
         $article->save();
 
-        return redirect('articles')->with('success', 'Your article has been added successfully.');
+        return redirect('articles')->with('success', 'Your article has been added successfully');
     }
 }

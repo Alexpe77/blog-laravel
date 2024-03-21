@@ -22,7 +22,8 @@ class SessionsController extends Controller
         if (! auth()->attempt($attributes)) {
 
             throw ValidationException::withMessages([
-                'email' => 'This email does not exist.'
+                'email' => 'Your email or password is not valid.',
+                'password' => 'Your email or password is not valid.'
             ]);
         }
 
